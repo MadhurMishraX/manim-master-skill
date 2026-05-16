@@ -2,16 +2,17 @@
 name: manim-master
 description: |
   Create production-quality Manim Community Edition animations with Claude.
-  Use for mathematical animations, science explainers, equation visualizations,
-  proof animations, algorithm visualizations, educational videos, and Manim code.
-  Follows Diagnose -> Plan -> Code -> Render -> Review -> Iterate.
+  Use when the user asks for Manim code, mathematical animations, science explainers,
+  equation visualizations, proof animations, algorithm visualizations, or educational videos.
+  Follows Diagnose -> Plan -> Code -> Render -> Review -> Iterate -> Export.
 ---
 
 # Manim Master Skill
 
-You are helping the user create accurate, beautiful, production-grade animations using Manim Community Edition.
+You are helping the user create accurate, clear, and beautiful animations using Manim Community Edition.
 
 Use this skill for:
+
 - ManimCE code generation
 - mathematical animations
 - science explainers
@@ -19,38 +20,20 @@ Use this skill for:
 - algorithm animations
 - equation derivations
 - educational videos
+- debugging Manim render errors
+- improving existing Manim scenes
 
-Use Manim Community Edition unless the user explicitly asks for ManimGL. ManimCE and ManimGL are different frameworks and their code should not be mixed.
+## Main workflow
 
-## Prime directive
-
-Make the animation:
-
-1. Correct - conceptually and mathematically accurate.
-2. Renderable - works in real ManimCE.
-3. Clear - one idea at a time.
-4. Beautiful - strong spacing, pacing, color, typography, and motion.
-5. Iterative - render, inspect, fix, then improve.
-
-## Mandatory workflow
-
-Follow this sequence:
+Always follow:
 
 ```txt
 Diagnose -> Plan -> Code -> Render -> Review -> Iterate -> Export
 ```
 
-Read the supporting files when needed:
+## Framework rule
 
-- `workflow.md` - full operating procedure
-- `manimce_rules.md` - ManimCE coding rules and safe API patterns
-- `visual_quality.md` - visual design rules
-- `troubleshooting.md` - common render/debug fixes
-- `templates/plan.template.md` - planning structure
-- `templates/script.template.py` - starter ManimCE script
-- `templates/review.checklist.md` - final QA checklist
-
-## Core rules
+Use Manim Community Edition by default.
 
 Use:
 
@@ -64,10 +47,16 @@ Do not use:
 from manimlib import *
 ```
 
-Create a dedicated project folder in the user's current working directory:
+Only use ManimGL if the user explicitly asks for it.
+
+## Project structure
+
+Create generated animation projects in the user's current working directory, not inside this skill directory.
+
+Use:
 
 ```txt
-<project-name>/
+project-name/
 |-- plan.md
 |-- script.py
 |-- manim.cfg
@@ -76,28 +65,37 @@ Create a dedicated project folder in the user's current working directory:
 `-- media/
 ```
 
-Never write project files inside the skill directory.
+## Before coding
 
-Before coding, create or update `plan.md`.
+Create or update `plan.md`.
 
-If details are missing, make reasonable assumptions and record them under:
+Include:
 
-```markdown
-## Assumptions
-```
+- topic
+- target audience
+- learning goal
+- assumptions
+- scene list
+- visual metaphor
+- formulas
+- color palette
+- render plan
+- possible risks
 
-Do not block the task unless a missing detail makes the video impossible.
+If the user gives enough information, do not ask extra questions. Make reasonable assumptions and record them.
 
-## Coding rules
+## During coding
 
 - Use one class per scene.
-- Use descriptive scene class names.
-- Use helper functions for repeated styling.
-- Use `VGroup` for grouped objects.
-- Use `.animate` for simple transformations.
-- Use `Transform`, `ReplacementTransform`, and `TransformMatchingTex` carefully.
-- Add `self.wait()` after important visual moments.
-- Add subcaptions when narration is implied.
+- Name scenes clearly.
+- Keep helper functions at the top.
+- Use `VGroup` for layout.
+- Use `MathTex` for formulas.
+- Use `Text` for plain text.
+- Use raw strings for LaTeX.
+- Use subcaptions when narration is implied.
+- Keep colors consistent.
+- Avoid clutter.
 
 ## Rendering
 
@@ -109,53 +107,61 @@ manim -ql script.py Scene1_Hook
 
 Render only failed or changed scenes while debugging.
 
-Use high quality only after all scenes are correct:
+Use high quality only after the scene is correct:
 
 ```bash
-manim -qh script.py Scene1_Hook Scene2_CoreIdea Scene3_Derivation
+manim -qh script.py Scene1_Hook Scene2_CoreIdea Scene3_Conclusion
 ```
 
-## Stitching
+## Review
 
-After all scenes render, create `concat.txt` and use ffmpeg:
+Before final output, check:
 
-```bash
-ffmpeg -y -f concat -safe 0 -i concat.txt -c copy final.mp4
-```
+- no clipped text
+- no overlapping labels
+- readable formulas
+- stable camera
+- meaningful motion
+- clear final frame
+- correct scene order
+- enough wait time after key moments
 
-If codec copying fails, re-encode:
+## Supporting files
 
-```bash
-ffmpeg -y -f concat -safe 0 -i concat.txt -c:v libx264 -pix_fmt yuv420p -c:a aac final.mp4
-```
+Read these when relevant:
 
-## Quality control
+- `workflow.md`
+- `manimce_rules.md`
+- `visual_quality.md`
+- `troubleshooting.md`
+- `rules/scenes.md`
+- `rules/animations.md`
+- `rules/mobjects.md`
+- `rules/text.md`
+- `rules/latex.md`
+- `rules/graphs.md`
+- `rules/camera.md`
+- `rules/three_d.md`
+- `rules/updaters.md`
+- `rules/value_trackers.md`
+- `rules/performance.md`
 
-Before final answer, check:
+## Error handling
 
-- all scene files exist,
-- final video exists,
-- no clipped text,
-- no overlapping labels,
-- formulas are readable,
-- camera framing is stable,
-- subtitles are present when needed,
-- scene order is correct,
-- final frame holds long enough.
+When an error occurs:
 
-## Style guidance
+1. Read the exact error.
+2. Identify the failing line.
+3. Fix the smallest cause.
+4. Re-render only the affected scene.
+5. Do not rewrite the whole file unless the structure is broken.
 
-Use clear educational visualization principles:
-- build intuition visually,
-- reveal information gradually,
-- use spatial metaphors,
-- keep notation alive on screen,
-- connect symbols to geometry.
+## Final response
 
-## When errors happen
+Report:
 
-Never guess blindly.
-
-Read the error message, identify the exact failing line, fix the smallest cause, and re-render only the affected scene.
-
-Use `troubleshooting.md`.
+- what files were created,
+- render command used,
+- final video path,
+- any assumptions,
+- any unresolved issue.
