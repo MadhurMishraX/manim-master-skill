@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Manim outputs
+media/
+partial_movie_files/
+*.mp4
+*.mov
+*.webm
+*.srt
+
+# Local project outputs
+final.mp4
+concat.txt
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
