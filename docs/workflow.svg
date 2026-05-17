@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 180" width="100%" height="100%">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="grad-blue-violet" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <linearGradient id="grad-violet-teal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#14b8a6" />
+    </linearGradient>
+    <linearGradient id="grad-teal-amber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#14b8a6" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#8b5cf6" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#14b8a6" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <!-- Filters for Glow Effects -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#8b5cf6" flood-opacity="0.15" />
+    </filter>
+
+    <!-- CSS Keyframe Animations -->
+    <style>
+      @keyframes dash {
+        to {
+          stroke-dashoffset: -20;
+        }
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-4px); }
+      }
+      .flow-line {
+        stroke-dasharray: 6, 4;
+        animation: dash 1.5s linear infinite;
+      }
+      .node {
+        transform-origin: center;
+        transition: all 0.3s ease;
+      }
+      .node:hover {
+        transform: scale(1.1);
+        filter: brightness(1.2);
+        cursor: pointer;
+      }
+      .node-1 { animation: float 4s ease-in-out infinite; }
+      .node-2 { animation: float 4s ease-in-out infinite 0.5s; }
+      .node-3 { animation: float 4s ease-in-out infinite 1s; }
+      .node-4 { animation: float 4s ease-in-out infinite 1.5s; }
+      .node-5 { animation: float 4s ease-in-out infinite 2s; }
+      .node-6 { animation: float 4s ease-in-out infinite 2.5s; }
+      .node-7 { animation: float 4s ease-in-out infinite 3s; }
+      .label {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        fill: #e2e8f0;
+      }
+      .sub-label {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        font-size: 10px;
+        fill: #94a3b8;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Layer -->
+  <rect width="900" height="180" rx="16" fill="#0b1020" />
+  
+  <!-- Subtle Glowing Path underneath -->
+  <path d="M 65,90 L 835,90" stroke="url(#glow)" stroke-width="8" stroke-linecap="round" opacity="0.4" />
+
+  <!-- Connecting Animated Flow Lines -->
+  <line x1="65" y1="90" x2="190" y2="90" stroke="url(#grad-blue-violet)" stroke-width="2.5" class="flow-line" />
+  <line x1="190" y1="90" x2="315" y2="90" stroke="url(#grad-blue-violet)" stroke-width="2.5" class="flow-line" />
+  <line x1="315" y1="90" x2="440" y2="90" stroke="url(#grad-violet-teal)" stroke-width="2.5" class="flow-line" />
+  <line x1="440" y1="90" x2="565" y2="90" stroke="url(#grad-violet-teal)" stroke-width="2.5" class="flow-line" />
+  <line x1="565" y1="90" x2="690" y2="90" stroke="url(#grad-teal-amber)" stroke-width="2.5" class="flow-line" />
+  <line x1="690" y1="90" x2="815" y2="90" stroke="url(#grad-teal-amber)" stroke-width="2.5" class="flow-line" />
+
+  <!-- Node 1: Diagnose -->
+  <g class="node node-1" filter="url(#shadow)" transform="translate(0, 0)">
+    <circle cx="65" cy="90" r="30" fill="#1e293b" stroke="#3b82f6" stroke-width="3" />
+    <text x="65" y="96" font-size="18" text-anchor="middle">🔍</text>
+    <text x="65" y="142" class="label" text-anchor="middle">Diagnose</text>
+    <text x="65" y="157" class="sub-label" text-anchor="middle">Analyze Requirements</text>
+  </g>
+
+  <!-- Node 2: Plan -->
+  <g class="node node-2" filter="url(#shadow)" transform="translate(0, 0)">
+    <circle cx="190" cy="90" r="30" fill="#1e293b" stroke="#6366f1" stroke-width="3" />
+    <text x="190" y="96" font-size="18" text-anchor="middle">📝</text>
+    <text x="190" y="142" class="label" text-anchor="middle">Plan</text>
+    <text x="190" y="157" class="sub-label" text-anchor="middle">Structure Scenes</text>
+  </g>
+
+  <!-- Node 3: Code -->
+  <g class="node node-3" filter="url(#shadow)" transform="translate(0, 0)">
+    <circle cx="315" cy="90" r="30" fill="#1e293b" stroke="#8b5cf6" stroke-width="3" />
+    <text x="315" y="96" font-size="18" text-anchor="middle">💻</text>
+    <text x="315" y="142" class="label" text-anchor="middle">Code</text>
+    <text x="315" y="157" class="sub-label" text-anchor="middle">ManimCE Standards</text>
+  </g>
+
+  <!-- Node 4: Render -->
+  <g class="node node-4" filter="url(#shadow)" transform="translate(0, 0)">
+    <circle cx="440" cy="90" r="30" fill="#1e293b" stroke="#ec4899" stroke-width="3" />
+    <text x="440" y="96" font-size="18" text-anchor="middle">🎬</text>
+    <text x="440" y="142" class="label" text-anchor="middle">Render</text>
+    <text x="440" y="157" class="sub-label" text-anchor="middle">Local Previews</text>
+  </g>
+
+  <!-- Node 5: Review -->
+  <g class="node node-5" filter="url(#shadow)" transform="translate(0, 0)">
+    <circle cx="565" cy="90" r="30" fill="#1e293b" stroke="#14b8a6" stroke-width="3" />
+    <text x="565" y="96" font-size="18" text-anchor="middle">👀</text>
+    <text x="565" y="142" class="label" text-anchor="middle">Review</text>
+    <text x="565" y="157" class="sub-label" text-anchor="middle">Quality Checks</text>
+  </g>
+
+  <!-- Node 6: Iterate -->
+  <g class="node node-6" filter="url(#shadow)" transform="translate(0, 0)">
+    <circle cx="690" cy="90" r="30" fill="#1e293b" stroke="#10b981" stroke-width="3" />
+    <text x="690" y="96" font-size="18" text-anchor="middle">🔄</text>
+    <text x="690" y="142" class="label" text-anchor="middle">Iterate</text>
+    <text x="690" y="157" class="sub-label" text-anchor="middle">Refinement Loop</text>
+  </g>
+
+  <!-- Node 7: Export -->
+  <g class="node node-7" filter="url(#shadow)" transform="translate(0, 0)">
+    <circle cx="815" cy="90" r="30" fill="#1e293b" stroke="#f59e0b" stroke-width="3" />
+    <text x="815" y="96" font-size="18" text-anchor="middle">📦</text>
+    <text x="815" y="142" class="label" text-anchor="middle">Export</text>
+    <text x="815" y="157" class="sub-label" text-anchor="middle">Final Stitching</text>
+  </g>
+</svg>

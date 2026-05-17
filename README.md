@@ -1,61 +1,79 @@
-# Manim Master Skill
+# 🎬 Manim Master Skill
 
-A production-grade Claude Skill for creating accurate, beautiful, and reliable Manim Community Edition animations.
+<p align="center">
+  <img src="https://img.shields.io/badge/python-3.10%2B-blue?logo=python&logoColor=white&style=for-the-badge" alt="Python Version" />
+  <img src="https://img.shields.io/badge/manim-Community%20Edition-red?style=for-the-badge" alt="Manim Community Edition" />
+  <img src="https://img.shields.io/badge/code%20style-ruff-000000.svg?style=for-the-badge" alt="Code Style: Ruff" />
+  <img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" alt="License: MIT" />
+</p>
+
+---
+
+### ✨ A production-grade Claude Skill for creating accurate, beautiful, and reliable Manim Community Edition animations.
 
 This repository helps Claude plan, code, render, debug, review, and refine mathematical and scientific animations using a disciplined workflow.
 
-```txt
-Diagnose -> Plan -> Code -> Render -> Review -> Iterate -> Export
-```
+---
 
-## What this is
+## 🌀 Dynamic Workflow Pipeline
 
-Manim Master Skill is built for people who want Manim animations that are not just renderable, but actually useful as explanations.
+Here is the structured journey every animation script undergoes:
 
-It gives Claude:
+<p align="center">
+  <img src="docs/workflow.svg" width="100%" alt="Manim Master Skill Dynamic Workflow Pipeline" />
+</p>
 
-- a structured animation workflow,
-- ManimCE-specific coding rules,
-- visual design rules,
-- debugging playbooks,
-- tested starter templates,
-- reusable recipes,
-- example projects,
-- CI checks,
-- and review checklists.
+---
 
-## Why it exists
+## 💡 What this is
 
-Most generated Manim code has at least one of these problems:
+**Manim Master Skill** is built for people who want Manim animations that are not just renderable, but actually useful as explanations.
 
-1. It does not render.
-2. It mixes ManimCE and ManimGL syntax.
-3. It looks cluttered.
-4. It teaches the concept unclearly.
-5. It has no debugging strategy.
-6. It has no review loop.
-7. It ignores LaTeX, ffmpeg, path, and version problems.
+It empowers Claude with a structured operating system for Manim work:
 
-This skill fixes those problems by giving Claude a practical operating system for Manim work.
+- 🚀 **Structured Animation Workflow** — From initial requirement diagnosis to final stitched export.
+- 📐 **ManimCE-Specific Coding Rules** — Keeping code syntactically correct and fully compatible with the modern Community Edition API.
+- 🎨 **Visual Design Rules** — Tailored color palettes, modern typography scales, and clean padding standards.
+- 🔧 **Debugging Playbooks** — Structured guides to bypass common LaTeX, path, and library issues.
+- 📦 **Tested Starter Templates** — High-quality templates to kickstart scenes with pre-configured aesthetics.
+- 🥗 **Reusable Recipes** — Standard patterns for graphing, transforming equations, camera movement, and more.
+- 📁 **Example Projects** — Fully worked-out examples showcasing production-grade code.
+- 🧪 **CI Checks** — Automated syntax and structure validation to maintain repository health.
+- 📋 **Review Checklists** — Step-by-step reviews for mathematical correctness, pacing, and visual style.
 
-## Features
+---
 
-- Manim Community Edition first
-- Planning templates
-- Scene-by-scene workflow
-- Render helpers
-- ffmpeg stitching helper
-- Visual quality rules
-- Math correctness checks
-- LaTeX troubleshooting
-- Camera and 3D guidance
-- Recipes for common animation patterns
-- Example projects
-- Smoke tests
-- GitHub Actions CI
-- Contribution guidelines
+## 🎯 Why it exists
 
-## Repository structure
+Most generated Manim code has at least one of these critical problems:
+
+1. 💥 **It does not render** due to outdated library assumptions or syntactical deprecations.
+2. 🔀 **It mixes ManimCE and ManimGL** API interfaces, creating broken scripts.
+3. 🧹 **It looks cluttered** with default colors, improper font scaling, and crowded screens.
+4. 🧠 **It teaches the concept unclearly**, failing to sequence the viewer's attention.
+5. 🔍 **It has no debugging strategy** when complex transformations fail.
+6. 🔁 **It has no review loop** for iterating and refining animations scene-by-scene.
+7. 🛠️ **It ignores system issues** like LaTeX installation mismatches, ffmpeg path, and version problems.
+
+This skill fixes those problems by giving Claude a **practical operating system** for Manim work.
+
+---
+
+## 🌟 Features
+
+| Category | Features |
+| :--- | :--- |
+| **⚡ Core Engine** | Manim Community Edition first • Visual quality rules • Camera and 3D guidance |
+| **🛠️ Utilities** | Planning templates • Scene-by-scene workflow • ffmpeg stitching helper |
+| **📚 Library** | Recipes for common animation patterns • Tested starter templates • Example projects |
+| **🛡️ Quality Assurance** | Smoke tests • GitHub Actions CI • Contribution guidelines |
+
+---
+
+## 📁 Repository Structure
+
+<details>
+<summary>📂 <b>Click to expand repository tree</b></summary>
 
 ```txt
 manim-master-skill/
@@ -119,50 +137,61 @@ manim-master-skill/
 |       `-- tools/
 |           |-- render_all.py
 |           `-- stitch.py
-`-- tests/
-    |-- smoke_scene.py
-    |-- test_no_hidden_unicode.py
-    |-- test_skill_structure.py
-    `-- test_python_syntax.py
+|`-- tests/
+|   |-- smoke_scene.py
+|   |-- test_no_hidden_unicode.py
+|   |-- test_skill_structure.py
+|   `-- test_python_syntax.py
 ```
+</details>
 
-## Install the skill
+---
 
+## 📥 Install the skill
+
+To add this skill to your AI assistant:
 ```bash
 npx skills add MadhurMishraX/manim-master-skill/skills/manim-master
 ```
 
-## Install ManimCE locally
+---
 
+## 💻 Install ManimCE locally
+
+Set up a clean virtual environment and install the core dependencies:
+
+### 🐧 macOS & Linux
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install manim
 ```
 
-Windows PowerShell:
-
+### 🪟 Windows PowerShell
 ```powershell
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install manim
 ```
 
-Verify:
-
+### 🔍 Verify installation:
 ```bash
 python --version
 manim --version
 ffmpeg -version
 ```
 
-For `MathTex`, install LaTeX:
+> [!TIP]
+> **For `MathTex` Support:** You will need a LaTeX distribution installed on your machine:
+> * 🍏 **macOS:** MacTeX
+> * 🐧 **Linux:** TeX Live
+> * 🪟 **Windows:** MiKTeX
 
-- macOS: MacTeX
-- Linux: TeX Live
-- Windows: MiKTeX
+---
 
-## Quick start prompt
+## 🚀 Quick start prompt
+
+To get started, try prompting Claude with:
 
 ```txt
 Create a Manim animation explaining why the derivative of sin(x) is cos(x).
@@ -170,7 +199,7 @@ Use a unit circle visual first, then connect it to the limit idea.
 Make it 16:9, about 90 seconds, with clean subtitles.
 ```
 
-Claude should create:
+Upon execution, Claude will create a clean, structured workspace:
 
 ```txt
 project-name/
@@ -182,43 +211,50 @@ project-name/
 `-- media/
 ```
 
-## Development render
+---
 
+## 🛠️ Developer Rendering Workflow
+
+Use these commands to render, stitch, and test your scenes:
+
+### 🎬 Development Render (Low quality, fast render)
 ```bash
 manim -ql script.py Scene1_Hook
 ```
 
-## Final render
-
+### 🏆 Final Render (High quality)
 ```bash
 manim -qh script.py Scene1_Hook Scene2_CoreIdea Scene3_Conclusion
 ```
 
-## Stitch scenes
-
+### 🧵 Stitch scenes
+Combine all independent scene renders into a single high-quality video file:
 ```bash
 python skills/manim-master/tools/stitch.py --media-dir media/videos/script/480p15 --output final.mp4
 ```
 
-## Run tests
-
+### 🧪 Run tests
 ```bash
 pip install -r requirements-dev.txt
 pytest
 ```
 
-## Design philosophy
+---
 
-A good mathematical animation is not decoration. It is a controlled sequence of attention.
+## 🧠 Design philosophy
+
+> *"A good mathematical animation is not decoration. It is a controlled sequence of attention."*
 
 This skill treats animation like explanation:
 
-- define the confusion,
-- build a visual model,
-- connect the visual to notation,
-- reveal the pattern,
-- finish with a clean takeaway.
+* 🔍 **Define the confusion** — Pinpoint the central question or challenge.
+* 🏗️ **Build a visual model** — Introduce a clean geometric representation.
+* 🔗 **Connect visual to notation** — Bridge the gap between the shape and the math symbols.
+* 📈 **Reveal the pattern** — Animate the transformation or continuous variation.
+* 🏁 **Finish with a clean takeaway** — End on a high-contrast final frame that sticks in the viewer's memory.
 
-## License
+---
 
-MIT License.
+## 📄 License
+
+This repository is licensed under the [MIT License](LICENSE).
