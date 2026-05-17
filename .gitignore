@@ -26,3 +26,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Personal/Miscellaneous Local files
+Misc/
