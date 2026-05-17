@@ -1,5 +1,5 @@
-from manim import *
 import numpy as np
+from manim import *
 
 
 class Scene1_UnitCircle(Scene):

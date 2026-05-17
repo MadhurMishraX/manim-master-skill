@@ -1,5 +1,4 @@
 from manim import *
-import numpy as np
 
 # ============================================================
 # Global style
@@ -99,7 +98,7 @@ class Scene3_Conclusion(Scene):
         formula = formula_tex(r"\text{visual intuition} \rightarrow \text{symbolic clarity}")
         formula.next_to(takeaway, DOWN, buff=0.5)
 
-        group = VGroup(takeaway, formula).move_to(ORIGIN)
+        VGroup(takeaway, formula).move_to(ORIGIN)
 
         self.add_subcaption("The final frame should leave one clear idea in the viewer's mind.", duration=3)
         self.play(Write(takeaway), run_time=1)

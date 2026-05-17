@@ -16,7 +16,7 @@ class Scene1_VectorAddition(Scene):
         label_b = MathTex(r"\vec b").next_to(b_shifted, RIGHT)
         label_r = MathTex(r"\vec a+\vec b").next_to(result, UP)
 
-        group = VGroup(a, b, b_shifted, result, label_a, label_b, label_r).move_to(ORIGIN)
+        VGroup(a, b, b_shifted, result, label_a, label_b, label_r).move_to(ORIGIN)
 
         self.play(Write(title))
         self.play(GrowArrow(a), Write(label_a))

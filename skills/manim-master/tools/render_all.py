@@ -15,7 +15,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-
 SCENE_BASES = {
     "Scene",
     "MovingCameraScene",
