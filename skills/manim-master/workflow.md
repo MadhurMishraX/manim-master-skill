@@ -130,18 +130,22 @@ Do not rewrite the whole project unless the structure is broken.
 
 ## Phase 6 - Export
 
-Create `concat.txt`:
+Create `concat.txt` (Note: Manim names the output subfolder after the Python filename, i.e., `media/videos/<script_name>/<quality>/`):
 
 ```txt
-file 'media/videos/script/480p15/Scene1_Hook.mp4'
-file 'media/videos/script/480p15/Scene2_CoreIdea.mp4'
-file 'media/videos/script/480p15/Scene3_Conclusion.mp4'
+file 'media/videos/<script_name>/480p15/Scene1_Hook.mp4'
+file 'media/videos/<script_name>/480p15/Scene2_CoreIdea.mp4'
+file 'media/videos/<script_name>/480p15/Scene3_Conclusion.mp4'
 ```
 
 Stitch:
 
 ```bash
+# Option A: Stream copy (instant merge, but requires identical encoding parameters across all scenes)
 ffmpeg -y -f concat -safe 0 -i concat.txt -c copy final.mp4
+
+# Option B: Re-encode (safer, guarantees sync, fixes playback freezes on Apple Devices)
+ffmpeg -y -f concat -safe 0 -i concat.txt -c:v libx264 -pix_fmt yuv420p -c:a aac final.mp4
 ```
 
 If quality was high, paths usually use `1080p60` instead of `480p15`.

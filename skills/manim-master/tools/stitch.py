@@ -29,7 +29,12 @@ def main() -> int:
         print(f"ERROR: media dir not found: {media_dir}", file=sys.stderr)
         return 1
 
-    videos = sorted(media_dir.glob("*.mp4"))
+    import re
+
+    def natural_sort_key(path: Path) -> list[int | str]:
+        return [int(text) if text.isdigit() else text.lower() for text in re.split(r"(\d+)", path.name)]
+
+    videos = sorted(media_dir.glob("*.mp4"), key=natural_sort_key)
     if not videos:
         print(f"ERROR: no mp4 files found in {media_dir}", file=sys.stderr)
         return 1

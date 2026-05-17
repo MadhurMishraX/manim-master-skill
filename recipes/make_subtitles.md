@@ -17,7 +17,7 @@ Or:
 self.play(
     Write(title),
     subcaption="Here is the question we want to answer.",
-    subcaption_duration=2,
+    run_time=2,
 )
 ```
 

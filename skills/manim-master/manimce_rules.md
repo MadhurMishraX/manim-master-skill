@@ -182,8 +182,11 @@ self.add_subcaption("We start with a unit circle.", duration=2)
 Or:
 
 ```python
-self.play(Write(title), subcaption="Here is the central question.", subcaption_duration=2)
+self.play(Write(title), subcaption="Here is the central question.")
 ```
+
+> [!NOTE]
+> In `self.play()`, the subcaption duration is automatically matched to the animation `run_time`. There is no `subcaption_duration` parameter in `play()`; using it will cause a crash.
 
 ## Config
 
