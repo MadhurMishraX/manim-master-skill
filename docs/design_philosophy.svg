@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 220" width="100%" height="100%">
+  <defs>
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="grad-red" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f87171" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </linearGradient>
+    <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <linearGradient id="grad-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+    <linearGradient id="grad-teal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2dd4bf" />
+      <stop offset="100%" stop-color="#0d9488" />
+    </linearGradient>
+    <linearGradient id="grad-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+
+    <style>
+      .card {
+        transform-origin: center;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .card:hover {
+        transform: translateY(-8px) scale(1.02);
+        cursor: pointer;
+      }
+      .card-1:hover { filter: drop-shadow(0 10px 20px rgba(239, 68, 68, 0.3)); }
+      .card-2:hover { filter: drop-shadow(0 10px 20px rgba(59, 130, 246, 0.3)); }
+      .card-3:hover { filter: drop-shadow(0 10px 20px rgba(168, 85, 247, 0.3)); }
+      .card-4:hover { filter: drop-shadow(0 10px 20px rgba(13, 148, 136, 0.3)); }
+      .card-5:hover { filter: drop-shadow(0 10px 20px rgba(217, 119, 6, 0.3)); }
+      
+      .title {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        fill: #ffffff;
+      }
+      .desc {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        font-size: 10px;
+        fill: #94a3b8;
+      }
+      .step-num {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        font-size: 32px;
+        font-weight: 900;
+        opacity: 0.15;
+        fill: #ffffff;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Layer -->
+  <rect width="850" height="220" rx="16" fill="#0b1020" />
+
+  <!-- Card 1: Define Confusion -->
+  <g class="card card-1" transform="translate(20, 20)">
+    <rect width="145" height="180" rx="12" fill="url(#card-grad)" stroke="#1e293b" stroke-width="1.5" />
+    <rect x="0" y="0" width="145" height="4" rx="2" fill="url(#grad-red)" />
+    <text x="125" y="42" class="step-num" text-anchor="end">01</text>
+    <text x="20" y="68" font-size="24">❓</text>
+    <text x="20" y="112" class="title">Define the</text>
+    <text x="20" y="128" class="title">Confusion</text>
+    <text x="20" y="152" class="desc">Isolate the conceptual</text>
+    <text x="20" y="164" class="desc">friction or bottleneck.</text>
+  </g>
+
+  <!-- Card 2: Visual Model -->
+  <g class="card card-2" transform="translate(182, 20)">
+    <rect width="145" height="180" rx="12" fill="url(#card-grad)" stroke="#1e293b" stroke-width="1.5" />
+    <rect x="0" y="0" width="145" height="4" rx="2" fill="url(#grad-blue)" />
+    <text x="125" y="42" class="step-num" text-anchor="end">02</text>
+    <text x="20" y="68" font-size="24">📐</text>
+    <text x="20" y="112" class="title">Build a</text>
+    <text x="20" y="128" class="title">Visual Model</text>
+    <text x="20" y="152" class="desc">Introduce clean geometric</text>
+    <text x="20" y="164" class="desc">representations.</text>
+  </g>
+
+  <!-- Card 3: Connect Notation -->
+  <g class="card card-3" transform="translate(344, 20)">
+    <rect width="145" height="180" rx="12" fill="url(#card-grad)" stroke="#1e293b" stroke-width="1.5" />
+    <rect x="0" y="0" width="145" height="4" rx="2" fill="url(#grad-purple)" />
+    <text x="125" y="42" class="step-num" text-anchor="end">03</text>
+    <text x="20" y="68" font-size="24">🔗</text>
+    <text x="20" y="112" class="title">Connect to</text>
+    <text x="20" y="128" class="title">Notation</text>
+    <text x="20" y="152" class="desc">Bridge physical shapes</text>
+    <text x="20" y="164" class="desc">to formal formulas.</text>
+  </g>
+
+  <!-- Card 4: Reveal Pattern -->
+  <g class="card card-4" transform="translate(506, 20)">
+    <rect width="145" height="180" rx="12" fill="url(#card-grad)" stroke="#1e293b" stroke-width="1.5" />
+    <rect x="0" y="0" width="145" height="4" rx="2" fill="url(#grad-teal)" />
+    <text x="125" y="42" class="step-num" text-anchor="end">04</text>
+    <text x="20" y="68" font-size="24">📈</text>
+    <text x="20" y="112" class="title">Reveal the</text>
+    <text x="20" y="128" class="title">Pattern</text>
+    <text x="20" y="152" class="desc">Animate transitions or</text>
+    <text x="20" y="164" class="desc">continuous changes.</text>
+  </g>
+
+  <!-- Card 5: Clear Takeaway -->
+  <g class="card card-5" transform="translate(668, 20)">
+    <rect width="145" height="180" rx="12" fill="url(#card-grad)" stroke="#1e293b" stroke-width="1.5" />
+    <rect x="0" y="0" width="145" height="4" rx="2" fill="url(#grad-gold)" />
+    <text x="125" y="42" class="step-num" text-anchor="end">05</text>
+    <text x="20" y="68" font-size="24">🏁</text>
+    <text x="20" y="112" class="title">Clear</text>
+    <text x="20" y="128" class="title">Takeaway</text>
+    <text x="20" y="152" class="desc">End on a memorable,</text>
+    <text x="20" y="164" class="desc">high-impact frame.</text>
+  </g>
+</svg>

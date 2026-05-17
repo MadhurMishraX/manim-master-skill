@@ -201,15 +201,9 @@ Make it 16:9, about 90 seconds, with clean subtitles.
 
 Upon execution, Claude will create a clean, structured workspace:
 
-```txt
-project-name/
-|-- plan.md
-|-- script.py
-|-- manim.cfg
-|-- concat.txt
-|-- final.mp4
-`-- media/
-```
+<p align="center">
+  <img src="docs/project_structure.svg" width="100%" alt="Manim Master Skill Project Workspace Structure" />
+</p>
 
 ---
 
@@ -247,11 +241,9 @@ pytest
 
 This skill treats animation like explanation:
 
-* 🔍 **Define the confusion** — Pinpoint the central question or challenge.
-* 🏗️ **Build a visual model** — Introduce a clean geometric representation.
-* 🔗 **Connect visual to notation** — Bridge the gap between the shape and the math symbols.
-* 📈 **Reveal the pattern** — Animate the transformation or continuous variation.
-* 🏁 **Finish with a clean takeaway** — End on a high-contrast final frame that sticks in the viewer's memory.
+<p align="center">
+  <img src="docs/design_philosophy.svg" width="100%" alt="Manim Master Skill Design Philosophy Steps" />
+</p>
 
 ---
 
